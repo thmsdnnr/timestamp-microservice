@@ -17,7 +17,7 @@ else { //some natural language
 var day=moment(inDate); if (day.isValid()===false) {invalidQuit();}
 else { res.send({"unix":day.unix(),"natural":day.format("MMMM D, YYYY")}); res.end(); }
 }
-function invalidQuit () {res.send({"unix":null,"natural":null}); res.end();}
+function invalidQuit() {res.send({"unix":null,"natural":null}); res.end();}
 });
 app.get('*',function(req,res){res.sendFile(path.join(__dirname, 'index.html'));});
-app.listen(process.env.PORT||8080,function() {console.log('listening on port '+port); });
+app.listen(process.env.PORT||8080,function() {console.log('listening'); });
